@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-text font-sans antialiased overflow-hidden;
+  }
+  
+  /* Custom styled scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme('colors.zinc.800');
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.zinc.600');
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+     background: theme('colors.zinc.500');
+  }
+}
+
+@layer components {
+  /* Main dashboard card/widget style */
+  .card {
+    @apply bg-panel rounded-lg shadow-lg border border-panel-light p-6 transition-all duration-300;
+  }
+  
+  .form-input {
+     @apply w-full bg-panel-light border border-zinc-600 rounded-md p-3 text-text placeholder-text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-text-muted mb-2;
+  }
+
+  /* --- THIS IS THE BUTTON STYLE --- */
+  .form-button {
+     @apply w-full py-3 px-6 bg-primary text-zinc-900 font-bold rounded-md hover:bg-cyan-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+}
+
