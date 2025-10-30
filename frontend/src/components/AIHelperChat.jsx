@@ -41,7 +41,8 @@ const AIHelperChat = () => {
 
     // --- Gemini API Call ---
     // Leave apiKey as "" - the environment will provide it
-    const apiKey = "AIzaSyDAkJyuercXSZf9p1NmB7dfLbpPDG2bofE"; 
+// This line (around line 44) is CORRECT
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
     // Construct the payload, excluding the model's loading message if we add one
